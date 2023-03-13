@@ -5,5 +5,22 @@
   },
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "name": "front",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anassezzine/front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anassezzine/front/issues"
+  },
+  "homepage": "https://github.com/anassezzine/front#readme"
 }
