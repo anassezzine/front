@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Liste des clients</title>
+  </head>
+  <body>
+    <h1>Liste des clients</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% clients.forEach(client => { %>
+          <tr>
+            <td><%= client.name %></td>
+            <td><%= client.email %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <a href="/nouveau-client">Ajouter un client</a>
+  </body>
+</html>
