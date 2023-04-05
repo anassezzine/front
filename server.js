@@ -1,22 +1,12 @@
 const express = require('express');
 const app = express();
+const port = 3001;
+ 
+app.use(express.static('public')); 
+        
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
-app.set('view engine', 'ejs')
-
-// Route qui renvoie les données des clients
-app.get('/clients', (req, res) => {
-  const clients = [
-    { name: 'John Doe', email: 'john.doe@example.com' },
-    { name: 'Jane Smith', email: 'jane.smith@example.com' },
-    { name: 'Bob Johnson', email: 'bob.johnson@example.com' },
-  ];
-
-  res.render('clients', { clients });
-});
-
-// Autres routes et middleware...
-
-// Lancement du serveur
-app.listen(3000, () => {
-  console.log('Serveur démarré sur le port 3000');
-});
+//lance l'ecoute
+app.listen(port, () => {
+    console.log(`App listening on port ${port}`)
+}) 
