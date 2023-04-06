@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/change.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Modifier un client</h1>
+  </main>
+
+  <div class="d-flex justify-content-center">
+    <form style="width:30rem; position:relative; top:2rem;">
+      <div class="col">
+        <label for="id">Id du client</label>
+        <input type="id" class="form-control" id="id" placeholder="Saisissez l'id du client">
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="name">Nom du client</label>
+          <input type="name" class="form-control" id="name" placeholder="Nom du client">
+        </div>
+        <div class="col">
+          <label for="name2">Prénom du client</label>
+          <input type="name" class="form-control" id="name2" placeholder="Prénom du client">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="InputEmail">Email</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Votre email">
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="society">Société</label>
+          <select class="form-control" id="society">
+            <option value="Microsoft">Microsoft</option>
+            <option value="Google">Google</option>
+            <option value="Apple">Apple</option>
+            <option value="Amazon">Amazon</option>
+            <option value="Facebook">Facebook</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="name2">Pays</label>
+          <input type="name" class="form-control" id="country" placeholder="Pays du client">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name2">Date de création</label>
+        <input type="date" class="form-control" id="date" placeholder="Date de création">
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="button" style="background-color: #b96666;" class="btn btn-secondary"
+            onclick="window.location.href = '/list.html';">Liste des clients</button>
+          <button style="background-color: forestgreen; position: absolute; right:0;" type="submit" class="btn btn-primary">Modifier</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var id = url.searchParams.get("id");
+      var name = url.searchParams.get("name");
+      var name2 = url.searchParams.get("name2");
+      var email = url.searchParams.get("email");
+      var society = url.searchParams.get("society");
+      var country = url.searchParams.get("country");
+      var date = url.searchParams.get("date");
+
+      $("#id").val(id);
+      $("#name").val(name);
+      $("#name2").val(name2);
+      $("#email").val(email);
+      $("#society").val(society);
+      $("#country").val(country);
+      $("#date").val(date);
+
+      $("form").submit(function (e) {
+        e.preventDefault();
+        var id = $("#id").val();
+        var name = $("#name").val();
+        var name2 = $("#name2").val();
+        var email = $("#email").val();
+        var society = $("#society").val();
+        var country = $("#country").val();
+        var date = $("#date").val();
+
+        $.ajax({
+          url: "http://localhost:3000/clients/" + id,
+          type: "PUT",
+          data: {
+            name: name,
+            name2: name2,
+            email: email,
+            society: society,
+            country: country,
+            date: date
+          },
+          success: function (result) {
+            window.location.href = "/list.html";
+          }
+        });
+      });
+    });
