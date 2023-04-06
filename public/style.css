@@ -1,0 +1,146 @@
+/* Set font family and font size for the entire document */
+body {
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #009879;
+    color: white;
+    padding: 1rem;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  /* Navigation styling */
+  nav {
+    background-color: #f3f3f3;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  nav li {
+    margin-left: 1rem;
+  }
+  
+  nav .button1 {
+    background-color: #47a18f;
+    color: white;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    height: 4rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  nav .button1:hover {
+    box-shadow: #009879 0 1px 30px;
+    transition-duration: .1s;
+  }
+  
+  nav .button1:nth-child(2) {
+    background-color: #f0c067;
+  }
+  
+  nav .button1:nth-child(3) {
+    background-color: #f85b5b;
+  }
+  
+  /* Section styling */
+  section {
+    margin-top: 1rem;
+  }
+  
+  /* Pagination styling */
+  .pagination {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .pagination .page-link {
+    color: #009879;
+    border-color: #009879;
+  }
+  
+  .pagination .page-link:hover {
+    color: #fff;
+    background-color: #009879;
+    border-color: #009879;
+  }
+  
+  /* Main content styling */
+  #cont {
+    margin-top: 1rem;
+  }
+  
+  table {
+    border-collapse: collapse;
+    font-size: 1em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  table th {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  table th,
+  table td {
+    padding: 12px 15px;
+  }
+  
+  table tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  table tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  select {
+    height: 2rem;
+    margin-right: .5rem;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  @media screen and (max-width: 767px) {
+    /* Mobile navigation styling */
+    nav ul {
+      flex-direction: column;
+    }
+  
+    nav li {
+      margin: 0;
+      margin-top: 1rem;
+    }
+  }
+  
