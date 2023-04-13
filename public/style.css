@@ -6,8 +6,8 @@ body {
   
   /* Header styling */
   header {
-    background-color: #009879;
-    color: white;
+    background-color: #824f5f;
+    color: rgb(125, 119, 121);
     padding: 1rem;
   }
   
@@ -34,7 +34,7 @@ body {
   }
   
   nav .button1 {
-    background-color: #47a18f;
+    background-color: #a1474b;
     color: white;
     border-radius: 8px;
     border-style: none;
@@ -53,16 +53,16 @@ body {
   }
   
   nav .button1:hover {
-    box-shadow: #009879 0 1px 30px;
+    box-shadow: #377886 0 1px 30px;
     transition-duration: .1s;
   }
   
   nav .button1:nth-child(2) {
-    background-color: #f0c067;
+    background-color: rgb(125, 119, 121);
   }
   
   nav .button1:nth-child(3) {
-    background-color: #f85b5b;
+    background-color: #824f5f;
   }
   
   /* Section styling */
