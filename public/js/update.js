@@ -27,7 +27,7 @@ function getTotalClients() {
     $.ajax({
         url: url,
         async: false,
-        success: function(data) {
+        success: function (data) {
             nbclients = data.total;
         }
     });

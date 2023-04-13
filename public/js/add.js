@@ -4,7 +4,7 @@ function handleSubmit(event) {
   event.preventDefault();
 
   // Utilisation de la méthode getJSON de jQuery pour récupérer les données du dernier client
-  $.getJSON(url, function(data) {
+  $.getJSON(url, function (data) {
     const idMax = data.total;
 
     // Création d'un objet client à partir des valeurs du formulaire
@@ -23,7 +23,7 @@ function handleSubmit(event) {
       method: "POST",
       contentType: "application/json",
       data: JSON.stringify(client),
-      success: function(response) {
+      success: function (response) {
         alert(response.message);
       }
     });
